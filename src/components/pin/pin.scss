@@ -1,0 +1,40 @@
+.popupContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  img {
+    width: 60px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    a {
+      font-weight: bold;
+      text-decoration: none;
+      color: #0078ff;
+    }
+
+    span {
+      font-size: 12px;
+      color: gray;
+    }
+
+    b {
+      color: green;
+    }
+  }
+}
+
+.leaflet-tooltip.customTooltip {
+  background: white;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
