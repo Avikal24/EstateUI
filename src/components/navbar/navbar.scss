@@ -1,22 +1,24 @@
-@import '../../responsive.scss';
+@import "../../responsive.scss";
+
 nav {
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  /* This applies to all links inside nav */
   a {
-    text-decoration: none;
-    color: inherit;
     transition: all 0.4s ease;
-   
-    @include sm{
-        display: none;
+    color: #222;               // Black text (not blue)
+    text-decoration: none;     // Removes underline
+    font-weight: 500;
+
+    @include sm {
+      display: none;
     }
 
-
     &:hover {
+      color: #000;             // Black on hover
+      font-weight: bold;       // Bold on hover
       scale: 1.05;
     }
   }
@@ -28,7 +30,7 @@ nav {
     gap: 50px;
 
     .logo {
-      font-weight: bold; /* fixed typo */
+      font-weight: bold;
       font-size: 20px;
       display: flex;
       align-items: center;
@@ -38,77 +40,136 @@ nav {
         width: 28px;
       }
 
-      span{
-          @include md{
-        display: none;
-          }
+      span {
+        @include md {
+          display: none;
+        }
 
-        @include sm{
-        display: initial;
+        @include sm {
+          display: initial;
         }
       }
     }
   }
-
   .right {
     flex: 2;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-color: #e5c7be;
+    background-color: #fcf5f3;
     height: 100%;
 
-    @include md{
-        background-color: transparent;
+    @include md {
+      background-color: transparent;
     }
-    a{
+
+    a {
       padding: 12px 24px;
+      margin: 20px;
+      color: #222;              // Black link in right section
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        color: #000;            // Black on hover
+        font-weight: bold;      // Bold on hover
+        scale: 1.05;
+      }
+    }
+
+    .user{
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+
+      img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+      }
+
+      span{
+        @include sm{
+          display: none;
+        }
+      }
+
+      .profile{
+        padding: 12px 24px;
+        background-color: #fece51;
+        cursor: pointer;
+        border: none;
+        position: relative;
+
+        .notification{
+          position: absolute;
+          top: -8px;
+          right: -8px;
+          background-color: red;
+          color: white;
+          border-radius: 50%;
+          width: 26px;
+          height: 26px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
     }
 
     .register {
       background-color: #fece51;
     }
 
-    .menuIcon{
-        display: none;
-        z-index: 999;
-      
-        img{
-            width: 36px;
-            height: 36px;
-            cursor: pointer;
-        }
+    .menuIcon {
+      display: none;
+      z-index: 999;
 
+      img {
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+      }
 
-        @include sm{
-            display: inline;
-        }
-     }
+      @include sm {
+        display: inline;
+      }
+    }
 
-    .menu{
-        position:absolute;
-        top: 0;
-        right: -50%;
-        background-color: black;
-        color: white;
-        height: 100vh;
-        width: 50%;
-        transition:all 1s ease;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
+    .menu {
+      position: absolute;
+      top: 0;
+      right: -50%;
+      background-color: black;
+      color: white;
+      height: 100vh;
+      width: 50%;
+      transition: all 1s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
 
-        &.active{
-            right: 0;
+      &.active {
+        right: 0;
+      }
+
+      @include sm {
+        a {
+          display: initial;
+          color: #fff;
+          text-decoration: none;
+          font-weight: 500;
+
+          &:hover {
+            color: #000;        // Black on hover in mobile menu
+            font-weight: bold;  // Bold on hover
+          }
         }
-        @include sm{
-            a{
-                 display: initial;
-            }
-           
-        }
-    } 
+      }
+    }
   }
 }

@@ -1,6 +1,7 @@
 import HomePage from "./routes/homePage/homePage.jsx"
 import ListPage from "./routes/listPage/listPage.jsx"
 import Layout from "./routes/layout/layout.jsx";
+import ProfilePage from "./routes/profilePage/profilePage.jsx";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
        {
         path:"/:id",
         element:<SinglePage />,
+      },
+      {
+          path: "/profile",
+          element: <ProfilePage />,
       }
     ]
   },
