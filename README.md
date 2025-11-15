@@ -35,13 +35,13 @@ This project serves as the frontend foundation of a future full-stack real-estat
 ---
 
 ### 📱 Small Screen View
-<img src="./assets/smallscreenview.png" width="400"/>
+<img src="./assets/smallscreenview.png" width="800"/>
 
 ---
 
 ### 
 
-<img src="./assets/smresponsive.png" width="400"/>
+<img src="./assets/smresponsive.png" width="800"/>
 
 ---
 
