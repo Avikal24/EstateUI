@@ -1,88 +1,140 @@
 @import "../../responsive.scss";
-.searchBar{
-    .type{
-      @include sm{
-      //  border-bottom: 1px solid #999;
-       }
-        button{
-            padding: 16px 36px;
-             border: 1px solid #999;
-             border-bottom: none;
-             
-             cursor: pointer;
-             background-color: white;
-             text-transform: capitalize;
-             
-             &.active{
-                background-color: #333;
-                color: white;
-             }
-             &:first-child{
-                border-top-left-radius: 5px;
-                border-right: none;
-             }
-                &:last-child{
-                    border-top-right-radius: 5px;
-                    border-left: none;
-                }
+.searchBar {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(50,65,105,0.14);
+  padding: 32px 24px;
+  margin-bottom: 28px;
 
-        }
+  .type {
+    display: flex;
+
+    button {
+      padding: 14px 28px;
+      border: 1px solid #d2d2d2;
+      border-bottom: none;
+      cursor: pointer;
+      background: #f9fafb;
+      color: #384160;
+      font-weight: 500;
+      transition: background 0.18s, color 0.14s, box-shadow 0.16s;
+
+      &.active, &:hover {
+        background: #ffe082;
+        color: #1a283a;
+        box-shadow: 0 2px 6px #f7c14b60;
+        border-color: #f7c14b;
+      }
+      &:first-child {
+        border-top-left-radius: 8px;
+        border-right: none;
+      }
+      &:last-child {
+        border-top-right-radius: 8px;
+        border-left: none;
+      }
+    }
+  }
+
+  form {
+    border: 1px solid #e7eaf3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    gap: 7px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+
+    input {
+      border: 1px solid #eaeaea;
+      padding: 13px 14px;
+      background: #f7f8fa;
+      font-size: 16px;
+      border-radius: 7px;
+      box-shadow: 0 1px 5px #dde3fa44;
+      transition: box-shadow 0.2s;
+      flex: 1 1 120px;    // ADDED: responsive sizing
+      max-width: 160px;   // ADDED: prevents inputs from growing too large
+      min-width: 0;       // ADDED: allows shrinking instead of overflow
+
+      &:focus {
+        box-shadow: 0 2px 7px #f7c14b43;
+        background: #fff;
+        outline: none;
+      }
     }
 
-    form{
-        border: 1px solid #999;
-        display: flex;
-        justify-content: space-between;
-        height: 64px;
-        gap: 5px;
+    button {
+      border: none;
+      cursor: pointer;
+      background-color: #fece51;
+      flex: 1;
+      border-radius: 7px;
+      font-size: 18px;
+      padding: 0 22px;
+      box-shadow: 0 2px 7px #f7c14b51;
+      color: #222;
+      font-weight: 600;
+      transition: background 0.19s, color 0.15s;
 
-        @include sm{
-            flex-direction: column;
-            border: none;
-        }
+      &:hover {
+        background: #ffb300;
+        color: #fff;
+      }
 
-        input{
-            border: none;
-            padding: 0px 10px;
-            width: 200px;
-           
-            @include lg{
-                padding: 0px 5px;
-
-                &:nth-child(2),&:nth-child(3){
-                    width: 140px;
-                }
-            }
-             @include md{
-                width: 200px;
-                &:nth-child(2),&:nth-child(3){
-                    width: 200px;
-                }
-            }
-
-            @include sm{
-                width: auto;
-             &:nth-child(2),
-             &:nth-child(3){
-                    width: auto;
-                }                
-                padding: 20px;
-                border: 1px solid #999;
-            }
-        }
-
-        button{
-             border: none;
-             cursor: pointer;
-                background-color: #fece51;
-                flex: 1;
-             @include sm{
-                   padding: 10px;
-                }
-                img{
-                    width: 24px;
-                    height: 24px;
-                }
-        }
+      img {
+        width: 23px;
+        height: 23px;
+      }
     }
+  }
+
+  // ------------ Responsive for Small Screens Only -----------
+  @include sm {
+    padding: 16px 7px;
+    box-shadow: 0 2px 9px rgba(50,65,105,0.08);
+    margin-bottom: 18px;
+    border-radius: 8px;
+
+    .type {
+      flex-direction: column;
+      button {
+        width: 100%;
+        margin-bottom: 4px;
+        border-radius: 7px 7px 0 0;
+        border-bottom: 1px solid #d2d2d2;
+
+        &:first-child {
+          border-top-left-radius: 8px;
+          border-right: 1px solid #d2d2d2;
+        }
+        &:last-child {
+          border-top-right-radius: 8px;
+          border-left: 1px solid #d2d2d2;
+        }
+      }
+    }
+
+    form {
+      flex-direction: column;
+      border: none;
+      gap: 12px;
+      height: auto;
+      align-items: stretch;
+      padding: 0;
+
+      input, button {
+        width: 100%;
+        flex: none;
+        max-width: none;
+        margin-bottom: 8px;
+        font-size: 1rem;
+      }
+      button {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
