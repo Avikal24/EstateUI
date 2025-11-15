@@ -66,6 +66,8 @@ This project serves as the frontend foundation of a future full-stack real-estat
 
 ## 📂 Project Structure
 
+```bash
+
 EstateUI/
 │
 ├── assets/                     # All images & screenshots
