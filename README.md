@@ -37,6 +37,8 @@ This project serves as the frontend foundation of a future full-stack real-estat
 ### 📱 Small Screen View
 <img src="./assets/smallscreenview.png" width="400"/>
 
+---
+
 ### 
 
 <img src="./assets/smresponsive.png" width="400"/>
@@ -51,18 +53,15 @@ This project serves as the frontend foundation of a future full-stack real-estat
 ### 🏡 Property Detail Page
 <img src="./assets/detail.png" width="800"/>
 
-
 ---
-
 
 ### 🏡 Property Slider Page
 <img src="./assets/sliderview.png" width="800"/>
 
-
 ---
 
 ### 👤 Profile Page
-<img src="./assets/profilePage.png" width="800"/>
+<img src="./assets/ProfilePage.png" width="800"/>
 
 
 ## 📂 Project Structure
